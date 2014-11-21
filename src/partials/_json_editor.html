@@ -1,0 +1,13 @@
+<div class="json_editor">
+  <span class="opening_bracket">{</span>
+  <div class="content_wrapper">
+    <property ng-repeat="name in addedPropertyNames" name="name" schema="schema.properties[name]" value="json[name]"></property>
+    <select ng-model="selectedPropertyName" ng-options="name for name in getAvailableProperties()" ng-change="addProperty()">
+      <option value="">-- choose property --</option>
+    </select>
+  </div>
+  <span class="closing_bracket">}</span>
+</div>
+<div>
+  {{ json }}
+</div>
